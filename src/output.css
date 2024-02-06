@@ -705,18 +705,9 @@ video {
   clear: none;
 }
 
-.m-1 {
-  margin: 0.25rem;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
-}
-
-.mx-1 {
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
 }
 
 .box-border {
@@ -1744,10 +1735,6 @@ video {
   border-width: 1px;
 }
 
-.border-2 {
-  border-width: 2px;
-}
-
 .border-x {
   border-left-width: 1px;
   border-right-width: 1px;
@@ -1806,16 +1793,6 @@ video {
   border-style: none;
 }
 
-.border-sky-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(14 165 233 / var(--tw-border-opacity));
-}
-
-.bg-pink-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 207 232 / var(--tw-bg-opacity));
-}
-
 .bg-\[\#a6c1ee\] {
   --tw-bg-opacity: 1;
   background-color: rgb(166 193 238 / var(--tw-bg-opacity));
@@ -1836,8 +1813,28 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-\[\#f1e203\] {
+  --tw-gradient-from: #f1e203 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(241 226 3 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-\[\#f14603\] {
+  --tw-gradient-from: #f14603 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(241 70 3 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .to-\[\#a6c1ee\] {
   --tw-gradient-to: #a6c1ee var(--tw-gradient-to-position);
+}
+
+.to-\[\#05e2f1\] {
+  --tw-gradient-to: #05e2f1 var(--tw-gradient-to-position);
+}
+
+.to-\[\#c205f1\] {
+  --tw-gradient-to: #c205f1 var(--tw-gradient-to-position);
 }
 
 .decoration-slice {
@@ -1960,11 +1957,6 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -2028,14 +2020,6 @@ video {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
-}
-
-.font-bold {
-  font-weight: 700;
-}
-
-.font-black {
-  font-weight: 900;
 }
 
 .uppercase {
@@ -2106,19 +2090,6 @@ video {
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
 }
 
-.tracking-widest {
-  letter-spacing: 0.1em;
-}
-
-.tracking-wide {
-  letter-spacing: 0.025em;
-}
-
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
-}
-
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -2138,10 +2109,6 @@ video {
 
 .no-underline {
   text-decoration-line: none;
-}
-
-.decoration-orange-500 {
-  text-decoration-color: #f97316;
 }
 
 .decoration-solid {

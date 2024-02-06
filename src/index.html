@@ -10,13 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-    <link href="./output.css" rel="stylesheet">
-    <!-- <script src="./tailwind@3.4.1.js"></script> -->
+    <!-- <link href="./output.css" rel="stylesheet"> -->
+    <script src="./tailwind@3.4.1.js"></script>
 </head>
 
-<body class="font-[Poppins] bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] h-screen">
+<body class="font-[Poppins] bg-gradient-to-t from-[#f14603] to-[#c205f1] h-screen">
     <header class="bg-white">
-        <nav class="flex justify-between items-center w-[92%]  mx-auto">
+        <nav class="flex justify-between items-center w-[92%] mx-auto">
             <div>
                 <img class="w-16 cursor-pointer" src="../public/images/Bell.png" alt="...">
             </div>
@@ -41,15 +41,76 @@
                 <button class="bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]">Sign in</button>
                 <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer md:hidden"></ion-icon>
             </div>
+        </nav>
     </header>
 
+    <!-- Calculator -->
+    <div class="flex justify-center items-center h-[50vh] my-8">
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <input type="text" id="result" class="w-full mb-4 p-2 border border-gray-300 rounded-md text-2xl text-right"
+                disabled>
+            <div id="history" class="mb-4 text-gray-600"></div>
+            <div class="grid grid-cols-4 gap-4">
+                <button onclick="appendValue('1')"
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded">1</button>
+                <button onclick="appendValue('2')"
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded">2</button>
+                <button onclick="appendValue('3')"
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded">3</button>
+                <button onclick="appendValue('+')"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">+</button>
 
+                <button onclick="appendValue('4')"
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded">4</button>
+                <button onclick="appendValue('5')"
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded">5</button>
+                <button onclick="appendValue('6')"
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded">6</button>
+                <button onclick="appendValue('-')"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">-</button>
+
+                <button onclick="appendValue('7')"
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded">7</button>
+                <button onclick="appendValue('8')"
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded">8</button>
+                <button onclick="appendValue('9')"
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded">9</button>
+                <button onclick="appendValue('*')"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">*</button>
+
+                <button onclick="appendValue('0')"
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded">0</button>
+                <button onclick="clearResult()"
+                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">C</button>
+                <button onclick="calculate()"
+                    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">=</button>
+                <button onclick="appendValue('/')"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">/</button>
+            </div>
+        </div>
+    </div>
 
     <script>
         const navLinks = document.querySelector('.nav-links')
         function onToggleMenu(e) {
             e.name = e.name === 'menu' ? 'close' : 'menu'
             navLinks.classList.toggle('top-[9%]')
+        }
+
+        function appendValue(value) {
+            document.getElementById('result').value += value;
+        }
+
+        function clearResult() {
+            document.getElementById('result').value = '';
+            document.getElementById('history').innerText = '';
+        }
+
+        function calculate() {
+            const expression = document.getElementById('result').value;
+            const result = eval(expression);
+            document.getElementById('result').value = result;
+            document.getElementById('history').innerText = expression + ' = ' + result;
         }
     </script>
 </body>
